@@ -22,7 +22,7 @@ public class CombinationFinder implements Callable<List<Pair>> {
     /**
      * Get a possible combination of pairs
      *
-     * @return list of pairы
+     * @return list of pairs
      * @throws Exception
      */
     @Override
