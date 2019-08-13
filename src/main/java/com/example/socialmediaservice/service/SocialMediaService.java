@@ -6,6 +6,7 @@ import com.example.socialmediaservice.task.CombinationFinder;
 import com.example.socialmediaservice.util.PairUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -21,6 +22,10 @@ import java.util.concurrent.ThreadPoolExecutor;
  */
 @Service
 public class SocialMediaService {
+
+    //the number of threads in the pool
+    @Value("${thread.number}")
+    private int threadsNumber;
 
     private static Logger logger = LogManager.getLogger();
 
@@ -42,7 +47,7 @@ public class SocialMediaService {
         //resulting pair combination
         List<Pair> resultPairs = new ArrayList<>();
 
-        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+        ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(threadsNumber);
         //list to store all tasks
         List<CombinationFinder> combinationFinders = new ArrayList<>();
 
