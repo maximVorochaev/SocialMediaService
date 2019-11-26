@@ -22,7 +22,7 @@ pipeline {
 
         stage("Second step") {
             steps {
-                bat 'mvn clean test'
+                bat 'echo %PATH%'
             }
         }
     }
