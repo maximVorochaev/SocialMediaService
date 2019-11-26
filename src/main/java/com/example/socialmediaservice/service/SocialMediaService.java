@@ -41,11 +41,16 @@ public class SocialMediaService {
         //list to store all possible pairs
         List<Pair> allPairs = getAllPairs(persons);
 
+
 //        logger.info("All possible pairs");
 //        allPairs.forEach(x -> logger.info(x.getP1().getName() + " - " + x.getP2().getName() + " : " + x.getSumPoints()));
 
         //resulting pair combination
         List<Pair> resultPairs = new ArrayList<>();
+
+        //Runtime.getRuntime().availableProcessors();
+
+        System.out.println("КОЛИЧЕСТВО ЯДЕР: " + Runtime.getRuntime().availableProcessors());
 
         ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(threadsNumber);
         //list to store all tasks
