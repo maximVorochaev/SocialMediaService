@@ -19,5 +19,11 @@ pipeline {
                 bat 'mvn --version'
             }
         }
+
+        stage("Second step") {
+            steps {
+                bat 'mvn clean test'
+            }
+        }
     }
 }
