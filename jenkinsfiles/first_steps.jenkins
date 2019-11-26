@@ -16,6 +16,7 @@ pipeline {
         stage("First step") {
             steps {
                 echo "Hello World!"
+                mvn --version
             }
         }
     }
