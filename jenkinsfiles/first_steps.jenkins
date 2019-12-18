@@ -16,7 +16,7 @@ pipeline {
         stage("First step") {
             steps {
                 bat 'echo "Hello World!"'
-                bat 'mvn --version'
+                bat 'java --version'
             }
         }
 
