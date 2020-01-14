@@ -12,6 +12,7 @@
     <artifactId>social-media-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>social-media-service</name>
+    <packaging>war</packaging>
     <description>Microservice for a social network that would maximize number of pairs based on shared interests
     </description>
 
@@ -55,6 +56,11 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 
