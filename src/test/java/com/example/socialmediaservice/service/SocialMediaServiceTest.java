@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.springframework.test.util.ReflectionTestUtils;
 
 import java.util.Arrays;
 import java.util.List;
@@ -27,6 +28,8 @@ public class SocialMediaServiceTest {
                 Person.builder().name("Dustin").interests(Arrays.asList("movies", "cars", "hiking", "music")).build(),
                 Person.builder().name("Lana").interests(Arrays.asList("cars", "dancing")).build());
 
+        ReflectionTestUtils.setField(socialMediaService, "threadsNumber", 10);
+
         List<Pair> pairs = socialMediaService.getPairs(persons);
 
         assertThat(pairs.size()).isEqualTo(2);
@@ -39,6 +42,8 @@ public class SocialMediaServiceTest {
                 Person.builder().name("Peter").interests(Arrays.asList("asd", "sdf")).build(),
                 Person.builder().name("Dustin").interests(Arrays.asList("tyuyt", "cars", "hiking", "music")).build(),
                 Person.builder().name("Lana").interests(Arrays.asList("sdfsdf", "tyuuyyt")).build());
+
+        ReflectionTestUtils.setField(socialMediaService, "threadsNumber", 10);
 
         List<Pair> pairs = socialMediaService.getPairs(persons);
 
