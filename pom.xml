@@ -12,7 +12,7 @@
     <artifactId>social-media-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>social-media-service</name>
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
     <description>Microservice for a social network that would maximize number of pairs based on shared interests
     </description>
 
